@@ -1,0 +1,8 @@
+import pandas as pd
+%matplotlib inline
+import matplotlib.pyplot as plt
+plt.style.use('ggplot')
+df = pd.read_csv('http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv ' , sep = ';')
+X = df.drop('quality' , 1).values # drop target variable
+y1 = df['quality'].values
+pd.DataFrame.hist(df, figsize = [15,15]);
